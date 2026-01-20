@@ -1,0 +1,16 @@
+name: deploy-a
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - files/b.txt
+defaults:
+  run:
+    shell: bash
+jobs:
+  prd:
+    runs-on: ubuntu-latest
+    environment: b/prd
+    steps:
+      - run: cat files/b.txt
