@@ -1,0 +1,28 @@
+name: deploy-a
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - files/a.txt
+defaults:
+  run:
+    shell: bash
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    environment: a/dev
+    steps:
+      - run: cat files/a.txt
+
+  stg:
+    runs-on: ubuntu-latest
+    environment: a/stg
+    steps:
+      - run: cat files/a.txt
+
+  prd:
+    runs-on: ubuntu-latest
+    environment: a/prd
+    steps:
+      - run: cat files/a.txt
