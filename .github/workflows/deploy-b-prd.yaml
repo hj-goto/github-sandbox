@@ -1,4 +1,4 @@
-name: deploy-a
+name: deploy b/prd
 on:
   push:
     branches:
