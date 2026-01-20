@@ -1,4 +1,4 @@
-name: deploy-a
+name: deploy a
 on:
   push:
     branches:
@@ -13,16 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: a/dev
     steps:
+      - uses: actions/checkout@v6
       - run: cat files/a.txt
 
   stg:
     runs-on: ubuntu-latest
     environment: a/stg
     steps:
+      - uses: actions/checkout@v6
       - run: cat files/a.txt
 
   prd:
     runs-on: ubuntu-latest
     environment: a/prd
     steps:
+      - uses: actions/checkout@v6
       - run: cat files/a.txt
